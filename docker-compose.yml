@@ -1,0 +1,14 @@
+version: "3"
+services:
+  cockroach:
+    image: cockroachdb/cockroach:v19.2.0
+    command: start --insecure
+    expose:
+      - "26257"
+    ports:
+      - "8000:8080"
+      - "26257:26257"
+    volumes:
+      - cockroach-data:/cockroach/cockroach-data
+volumes:
+  cockroach-data: {}
